@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quiz/questions.dart';
+import 'package:quiz/models/questions.dart';
+import 'package:quiz/questions_screen.dart';
 import 'package:quiz/start_screen.dart';
+import 'package:quiz/results_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -12,6 +14,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  List<String> selectedAnswers = [];
   String? activeScreen;
 
   // initState is a built in function that runs one time, after the class is built.
@@ -22,6 +25,14 @@ class _QuizState extends State<Quiz> {
   //   activeScreen = StartScreen(switchScreen);
   //   super.initState();
   // }
+
+  void chooseAnswer(String answer){
+    selectedAnswers.add(answer);
+
+    if (selectedAnswers.length == questions.length){
+      activeScreen = "results-screen";
+    }
+  }
 
   void switchScreen() {
     setState(() {
@@ -34,7 +45,11 @@ class _QuizState extends State<Quiz> {
     Widget screenWidget = StartScreen(switchScreen);
 
     if (activeScreen == "questions-screen") {
-      screenWidget = const QuestionsScreen();
+      screenWidget = QuestionsScreen(chooseAnswer);
+    }
+
+    if (activeScreen == "results-screen"){
+      screenWidget = const ResultsScreen();
     }
 
     return MaterialApp(

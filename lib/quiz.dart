@@ -15,7 +15,7 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
   List<String> selectedAnswers = [];
-  String? activeScreen;
+  String activeScreen = "start-screen";
 
   // initState is a built in function that runs one time, after the class is built.
   // this is an example
@@ -26,11 +26,13 @@ class _QuizState extends State<Quiz> {
   //   super.initState();
   // }
 
-  void chooseAnswer(String answer){
+  void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
 
-    if (selectedAnswers.length == questions.length){
-      activeScreen = "results-screen";
+    if (selectedAnswers.length == questions.length) {
+      setState(() {
+        activeScreen = "results-screen";
+      });
     }
   }
 
@@ -48,8 +50,8 @@ class _QuizState extends State<Quiz> {
       screenWidget = QuestionsScreen(chooseAnswer);
     }
 
-    if (activeScreen == "results-screen"){
-      screenWidget = const ResultsScreen();
+    if (activeScreen == "results-screen") {
+      screenWidget = ResultsScreen(selectedAnswers);
     }
 
     return MaterialApp(

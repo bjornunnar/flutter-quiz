@@ -26,6 +26,13 @@ class _QuizState extends State<Quiz> {
   //   super.initState();
   // }
 
+  void startOver(){
+    selectedAnswers = [];
+    setState(() {
+      activeScreen = "start-screen";
+    });
+  }
+
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
 
@@ -51,7 +58,7 @@ class _QuizState extends State<Quiz> {
     }
 
     if (activeScreen == "results-screen") {
-      screenWidget = ResultsScreen(selectedAnswers);
+      screenWidget = ResultsScreen(selectedAnswers, startOver);
     }
 
     return MaterialApp(

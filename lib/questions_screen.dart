@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz/answer_button.dart';
 import 'package:quiz/models/questions.dart';
-import 'package:quiz/models/quiz_question.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen(this.onSelectAnswer, {super.key});

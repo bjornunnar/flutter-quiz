@@ -2,54 +2,63 @@ import 'package:quiz/models/quiz_question.dart';
 
 const questions = [
   QuizQuestion(
-    'What are the main building blocks of Flutter UIs?',
+    'What was director David Fincher\'s first feature film?',
     [
-      'Widgets',
-      'Components',
-      'Blocks',
-      'Functions',
+      'Alien 3',
+      'The Curious Case of Benjamin Button',
+      'Se7en',
+      'The Game',
     ],
   ),
-  QuizQuestion('How are Flutter UIs built?', [
-    'By combining widgets in code',
-    'By combining widgets in a visual editor',
-    'By defining widgets in config files',
-    'By using XCode for iOS and Android Studio for Android',
+  QuizQuestion('Which of these music videos did Fincher direct?', [
+    'Billy Idol: Cradle of Love',
+    'Michael Jackson: Bad',
+    'Aerosmith: Crazy ',
+    'Green Day: Hitching a Ride',
   ]),
   QuizQuestion(
-    'What\'s the purpose of a StatefulWidget?',
+    'Which of these films was NOT based on an existing intellectual property?',
     [
-      'Update UI as data changes',
-      'Update data as UI changes',
-      'Ignore data changes',
-      'Render UI that does not depend on data',
+      'Panic Room',
+      'The Social Network',
+      'The Girl With the Dragon Tattoo',
+      'Fight Club',
     ],
   ),
   QuizQuestion(
-    'Which widget should you try to use more often: StatelessWidget or StatefulWidget?',
+    'What was Fincher\'s shortest feature film, prior to the release of The Killer in 2023?',
     [
-      'StatelessWidget',
-      'StatefulWidget',
-      'Both are equally good',
-      'None of the above',
+      'Panic Room',
+      'The Game',
+      'Gone Girl',
+      'Mank',
     ],
   ),
   QuizQuestion(
-    'What happens if you change data in a StatelessWidget?',
+    'Fincher executive produced this series for Netflix:',
     [
-      'The UI is not updated',
-      'The UI is updated',
-      'The closest StatefulWidget is updated',
-      'Any nested StatefulWidgets are updated',
+      'House of Cards',
+      'Midnight Mass',
+      'Stranger Things',
+      'Jack Ryan',
     ],
   ),
   QuizQuestion(
-    'How should you update data inside of StatefulWidgets?',
+    'Fincher\'s Zodiac was based on the investigative writing of:',
     [
-      'By calling setState()',
-      'By calling updateData()',
-      'By calling updateUI()',
-      'By calling updateState()',
+      'Robert Graysmith',
+      'Chest Rockwell',
+      'Andrew Kevin Walker',
+      'Harry Dean Stanton',
+    ],
+  ),
+    QuizQuestion(
+    'The characters of Gone Girl frequently mention this children\'s book character:',
+    [
+      'Amazing Amy',
+      'The Great Gregory',
+      'Crazy Kevin',
+      'Pretty Posey',
     ],
   ),
 ];

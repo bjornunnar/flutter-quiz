@@ -14,7 +14,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  List<String> selectedAnswers = [];
+  List<String> selectedAnswers = []; // initialize the list of the user's answers, we will be .adding to this list when they pick an answer
   String activeScreen = "start-screen";
 
   // initState is a built in function that runs one time, after the class is built.
@@ -26,6 +26,7 @@ class _QuizState extends State<Quiz> {
   //   super.initState();
   // }
 
+  // we include this in the results screen, it's used to start over again, resetting the user answers list
   void startOver(){
     selectedAnswers = [];
     setState(() {
@@ -33,6 +34,7 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  // this is called each time the user picks an answer. we check if there is a next question, if not we move to the results screen
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
 
@@ -43,6 +45,7 @@ class _QuizState extends State<Quiz> {
     }
   }
 
+  // to move from the start screen to the questions screen
   void switchScreen() {
     setState(() {
       activeScreen = "questions-screen";
@@ -51,6 +54,8 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(context) {
+
+    // we define which custom widget we want the base MaterialApp to build, based on where the user is in the process
     Widget screenWidget = StartScreen(switchScreen);
 
     if (activeScreen == "questions-screen") {
@@ -65,7 +70,7 @@ class _QuizState extends State<Quiz> {
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
+            gradient: LinearGradient( // this is the gradient background color we use for the entire app
               colors: [
                 Color.fromARGB(255, 78, 13, 151),
                 Color.fromARGB(255, 107, 15, 168)

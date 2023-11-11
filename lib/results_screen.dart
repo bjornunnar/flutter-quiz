@@ -7,7 +7,11 @@ class ResultsScreen extends StatelessWidget{
   final List<String> selectedAnswers;
   final void Function() startOver;
 
-  List<Map<String, Object>> getSummaryData(){
+// "getter" for summary data. mashes together the questions and the chosen answers
+// and makes a list of maps that contain values for 1 question each.
+// "getters" are basically functions but now we can skip the step where we
+// feed the function into a variable, to be called later. we just call the getter.
+  get summaryData {
     final List<Map<String, Object>> summary = [];
 
     for (int i = 0; i < selectedAnswers.length; i++){
@@ -24,11 +28,13 @@ class ResultsScreen extends StatelessWidget{
 
   @override
   Widget build(context){
-    final summaryData = getSummaryData();
     final numberOfTotalQuestions = questions.length;
-    final numberOfCorrectAnswers = summaryData.where((data){
-      return data["user_answer"] == data["correct_answer"];
-    }).length;
+
+    // the .where method makes a new list by going through summaryData and checking "where" the set conditions are met.
+    // in this case, where the user answer and correct answer line up
+    final numberOfCorrectAnswers = summaryData.where((data){ 
+      return data["user_answer"] == data["correct_answer"]; // this either results in true or false
+    }).length; // and then we just get the length of that list, which is the number we need.
 
     return SizedBox(
       width: double.infinity,

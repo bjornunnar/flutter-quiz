@@ -4,7 +4,7 @@ class AnswerButton extends StatelessWidget{
   const AnswerButton(this.answerText, this.onTap, {super.key});
 
   final String answerText;
-  final void Function() onTap;
+  final void Function() onTap; // the "chooseAnswer" function we inherit from quiz.dart via questions_screen.dart
   
   @override
   Widget build(context){

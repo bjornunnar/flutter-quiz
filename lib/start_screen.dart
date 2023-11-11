@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key});
 
-  final void Function() startQuiz;
+  final void Function() startQuiz; // Function inherited from quiz.dart
 
   @override
   Widget build(context) {
@@ -16,15 +16,15 @@ class StartScreen extends StatelessWidget {
           // image
           const Image(
             image: AssetImage(
-              "assets/images/quiz-logo.png"
+              "assets/images/film-white.png"
               ), 
             width: 300, 
             color: Color.fromARGB(150, 255, 255, 255),
           ),
           // text
-          const SizedBox(height: 80),
+          const SizedBox(height: 80), // empty SizedBox elements used for spacing between elements
           const Text(
-            "Learn Flutter the Fun Way!",
+            "The David Fincher Quiz",
             style: TextStyle(color: Color.fromRGBO(255, 243, 243, 1), fontSize: 24)
           ),
           // button as new widget
@@ -34,7 +34,7 @@ class StartScreen extends StatelessWidget {
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
             ),
-            onPressed: startQuiz, 
+            onPressed: startQuiz, // and here we call the function to start
             label: const Text(
               "Start Quiz",
               )

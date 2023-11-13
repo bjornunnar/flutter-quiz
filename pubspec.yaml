@@ -21,3 +21,11 @@ flutter:
   - assets/images/quiz-logo.png
   - assets/images/film.png
   - assets/images/film-white.png
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: fonts/Lato-Regular.ttf
+        - asset: fonts/Lato-Italic.ttf
+          style: italic
+        - asset: fonts/Lato-Bold.ttf
+          weight: 700

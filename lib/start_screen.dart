@@ -25,7 +25,7 @@ class StartScreen extends StatelessWidget {
           const SizedBox(height: 80), // empty SizedBox elements used for spacing between elements
           const Text(
             "The David Fincher Quiz",
-            style: TextStyle(color: Color.fromRGBO(255, 243, 243, 1), fontSize: 24)
+            style: TextStyle(color: Color.fromRGBO(255, 243, 243, 1), fontSize: 24, fontFamily: "Lato")
           ),
           // button as new widget
           const SizedBox(height: 50),
